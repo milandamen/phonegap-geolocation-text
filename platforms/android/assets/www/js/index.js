@@ -51,24 +51,29 @@ var app = {
 
 var deviceReady = function() {
 	var el_loc = document.getElementById('location');
-	alert(navigator.geolocation);
-	navigator.geolocation.getCurrentPosition(function(position) {
-	    alert(position.coords.latitude);
-		el_loc.textContent =  'Latitude: '          + position.coords.latitude          + '\n' +
-						  'Longitude: '         + position.coords.longitude         + '\n' +
-						  'Altitude: '          + position.coords.altitude          + '\n' +
-						  'Accuracy: '          + position.coords.accuracy          + '\n' +
-						  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-						  'Heading: '           + position.coords.heading           + '\n' +
-						  'Speed: '             + position.coords.speed             + '\n' +
-						  'Timestamp: '         + position.timestamp                + '\n';
+	//navigator.geolocation.getCurrentPosition(function(position) {
+	    //alert(position.coords.latitude);
+		//el_loc.textContent =  'Latitude: '          + position.coords.latitude          + '\n' +
+						  //'Longitude: '         + position.coords.longitude         + '\n' +
+						  //'Altitude: '          + position.coords.altitude          + '\n' +
+						  //'Accuracy: '          + position.coords.accuracy          + '\n' +
+						  //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+						  //'Heading: '           + position.coords.heading           + '\n' +
+						  //'Speed: '             + position.coords.speed             + '\n' +
+						  //'Timestamp: '         + position.timestamp                + '\n';
 
-		el_dist = document.getElementById('distance');
+		//el_dist = document.getElementById('distance');
 		
-		el_dist.textContent = Math.round(getDistance(
-			{lat: position.coords.latitude, lng: position.coords.longitude},
-			{lat: 51.6889006, lng: 5.2848906}
-		));
+		//el_dist.textContent = Math.round(getDistance(
+			//{lat: position.coords.latitude, lng: position.coords.longitude},
+			//{lat: 51.6889006, lng: 5.2848906}
+		//));
+	//});
+	
+	navigator.compass.getCurrentHeading(function(heading) {
+	    alert('Heading: ' + heading.magneticHeading);
+	}, function(error) {
+	    alert('CompassError: ' + error.code);
 	});
 }
 
