@@ -50,34 +50,32 @@ var app = {
 };
 
 var deviceReady = function() {
-    alert('GVDASHDUAHSUIDGHALHSDK');
-	var el_loc = document.getElementById('location');
-	navigator.geolocation.getCurrentPosition(function(position) {
-	    alert(position.coords.latitude);
-		el_loc.textContent =  'Latitude: '          + position.coords.latitude          + '\n' +
-						  'Longitude: '         + position.coords.longitude         + '\n' +
-						  'Altitude: '          + position.coords.altitude          + '\n' +
-						  'Accuracy: '          + position.coords.accuracy          + '\n' +
-						  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-						  'Heading: '           + position.coords.heading           + '\n' +
-						  'Speed: '             + position.coords.speed             + '\n' +
-						  'Timestamp: '         + position.timestamp                + '\n';
+    var el_loc = document.getElementById('location');
+    navigator.geolocation.getCurrentPosition(function(position) {
+	alert('Lat: ' + position.coords.latitude);
+	    el_loc.textContent =  'Latitude: '          + position.coords.latitude          + '\n' +
+					      'Longitude: '         + position.coords.longitude         + '\n' +
+					      'Altitude: '          + position.coords.altitude          + '\n' +
+					      'Accuracy: '          + position.coords.accuracy          + '\n' +
+					      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+					      'Heading: '           + position.coords.heading           + '\n' +
+					      'Speed: '             + position.coords.speed             + '\n' +
+					      'Timestamp: '         + position.timestamp                + '\n';
 
-		el_dist = document.getElementById('distance');
-		
-		el_dist.textContent = Math.round(getDistance(
-			{lat: position.coords.latitude, lng: position.coords.longitude},
-			{lat: 51.6889006, lng: 5.2848906}
-		));
-	});
-	
-	//navigator.compass.getCurrentHeading(function(heading) {
-	    //alert('Heading: ' + heading.magneticHeading);
-	    //alert('gvd tifus zooi');
-	//}, function(error) {
-	    //alert('CompassError: ' + error.code);
-	//});
-    alert('asdasdasd');
+	    el_dist = document.getElementById('distance');
+	    
+	    el_dist.textContent = Math.round(getDistance(
+		    {lat: position.coords.latitude, lng: position.coords.longitude},
+		    {lat: 51.6889006, lng: 5.2848906}
+	    ));
+    });
+    
+    //navigator.compass.getCurrentHeading(function(heading) {
+	//alert('Heading: ' + heading.magneticHeading);
+	//alert('gvd tifus zooi');
+    //}, function(error) {
+	//alert('CompassError: ' + error.code);
+    //});
 }
 
 var getDistance = function(p1, p2) {
