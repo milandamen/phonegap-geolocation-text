@@ -50,6 +50,7 @@ var app = {
 };
 
 var deviceReady = function() {
+    alert('GVDASHDUAHSUIDGHALHSDK');
 	var el_loc = document.getElementById('location');
 	navigator.geolocation.getCurrentPosition(function(position) {
 	    alert(position.coords.latitude);
@@ -76,6 +77,7 @@ var deviceReady = function() {
 	//}, function(error) {
 	    //alert('CompassError: ' + error.code);
 	//});
+    alert('asdasdasd');
 }
 
 var getDistance = function(p1, p2) {
