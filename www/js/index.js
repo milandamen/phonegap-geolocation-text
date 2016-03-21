@@ -72,6 +72,7 @@ var deviceReady = function() {
 	
 	//navigator.compass.getCurrentHeading(function(heading) {
 	    //alert('Heading: ' + heading.magneticHeading);
+	    //alert('gvd tifus zooi');
 	//}, function(error) {
 	    //alert('CompassError: ' + error.code);
 	//});
